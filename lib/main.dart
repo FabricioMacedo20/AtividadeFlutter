@@ -3,7 +3,55 @@ import 'package:flutter/material.dart';
 void main() {
   runApp(const MyApp());
 }
+void main() {
+  tiposDeDados();
+  estruturasDeControle();
+  listasEMapas();
+  apresentarAluno("Fabricio", 21, false);
+  runApp(const MyApp());
+}
 
+void tiposDeDados(){
+  int idade = 21;
+  double altura = 1.73;
+  String nome = "Fabricio";
+  bool estuda = false;
+
+  print('--Tipos de dados--');
+  print('idade: $idade');
+  print('altura: $altura');
+  print('nome: $nome');
+  print('ativo: $estuda');
+}
+
+void estruturasDeControle(){
+  int idade = 22;
+
+  print('--- Estruturas de controle ---');
+  if (idade >= 18){
+    print("Maior de idade");
+  } else {
+    print("Menor de idade");
+  }
+}
+
+String apresentarAluno(String nome, int idade, bool estuda){
+  return('Olá meu nome é $nome, tenho $idade anos e estou aprendendo Flutter $estuda.');
+}
+
+void listasEMapas(){
+  print('--- Listas e Mapas ---');
+
+  List<String> linguagensDeProgramacao = ["Python, Java, PHP"];
+  linguagensDeProgramacao.forEach((linguagem) => print("Numero é: $linguagem"));
+
+  Map<String, String> Materias =
+  {"Robotica": "40h", "Banco de dados": "40h", "Programacao Web": "40h"};
+  
+  Materias.forEach((materia,horas){
+    print('A materia $materia foi estudada por $horas');
+  });
+}
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
